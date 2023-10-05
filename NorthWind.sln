@@ -13,6 +13,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frameworks And Drivers", "F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWind.Entities", "NorthWind.Entities\NorthWind.Entities.csproj", "{3CE5A769-7F23-4469-B48F-6E145F737B65}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateways", "Gateways", "{69BCCD89-95E4-41D7-8FA9-AB73E734380D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWind.Repositories.EFCore", "NorthWind.Repositories.EFCore\NorthWind.Repositories.EFCore.csproj", "{27A1F559-BC5D-4779-BAF0-7C62BA75D47C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,12 +27,18 @@ Global
 		{3CE5A769-7F23-4469-B48F-6E145F737B65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CE5A769-7F23-4469-B48F-6E145F737B65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CE5A769-7F23-4469-B48F-6E145F737B65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27A1F559-BC5D-4779-BAF0-7C62BA75D47C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27A1F559-BC5D-4779-BAF0-7C62BA75D47C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27A1F559-BC5D-4779-BAF0-7C62BA75D47C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27A1F559-BC5D-4779-BAF0-7C62BA75D47C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3CE5A769-7F23-4469-B48F-6E145F737B65} = {554F1F9D-4893-4CE2-A04A-837D8964425D}
+		{69BCCD89-95E4-41D7-8FA9-AB73E734380D} = {C86ECFE0-CC23-4B21-AD2D-BB6A9AEEC958}
+		{27A1F559-BC5D-4779-BAF0-7C62BA75D47C} = {69BCCD89-95E4-41D7-8FA9-AB73E734380D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {10611ADF-28D2-42AA-8E00-D6AA8877DD1B}
