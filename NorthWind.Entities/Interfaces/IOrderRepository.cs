@@ -11,6 +11,7 @@ namespace NorthWind.Entities.Interfaces
     public interface IOrderRepository
     {
         void Create(Order order);
+        void CreateOrder(Order order);
         IEnumerable<Order> GetOrdersBySpecification(Specification<Order> specification);
     }
 }

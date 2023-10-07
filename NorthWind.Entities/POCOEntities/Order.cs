@@ -21,6 +21,6 @@ namespace NorthWind.Entities.POCOEntities
         public DiscountType DiscounType { get; set; }
         public double Discount { get; set; }
         public ShippingType ShippingType { get; set; }
-
+        public DiscountType DiscountType { get; set; }
     }
 }
