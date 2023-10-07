@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="fluentvalidation" Version="11.7.1" />
-    <PackageReference Include="Mediatr" Version="12.1.1" />
+    <ProjectReference Include="..\NorthWind.Entities\NorthWind.Entities.csproj" />
+    <ProjectReference Include="..\NorthWind.UseCasesDTOs\NorthWind.UseCasesDTOs.csproj" />
   </ItemGroup>
 
 </Project>
