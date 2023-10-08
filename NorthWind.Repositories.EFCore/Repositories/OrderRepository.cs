@@ -21,6 +21,12 @@ namespace NorthWind.Repositories.EFCore.Repositories
         { 
             Context.Add(order);
         }
+
+        public void CreateOrder(Order order)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<Order> GetOrdersBySpecification(Specification<Order> specification)
         {
             var ExpressionDelegate = specification.Expression.Compile();
