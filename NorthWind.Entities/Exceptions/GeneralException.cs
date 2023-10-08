@@ -9,6 +9,7 @@ namespace NorthWind.Entities.Exceptions
     public class GeneralException : Exception
     {
         public string Detail { get; set; }
+        public IEnumerable<object> Errors { get; set; }
 
         public GeneralException() { }
         
