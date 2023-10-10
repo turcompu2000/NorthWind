@@ -1,12 +1,15 @@
-﻿using MediatR;
+﻿using FluentValidation;
+using MediatR;
 using NorthWind.Entities.Enums;
 using NorthWind.Entities.Exceptions;
 using NorthWind.Entities.Interfaces;
 using NorthWind.Entities.POCOEntities;
+using NorthWind.UseCases.Common.Validators;
 using NorthWind.UseCasesDTOs.CreateOrder;
 using NorthWind.UseCasesPorts.CreateOrder;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,17 +22,22 @@ namespace NorthWind.UseCases.CreateOrder
         readonly IOrderRepository OrderReposity;
         readonly IOrderDetailRepository OrderDetailRepository;
         readonly IUnitOfWork UnitOfWork;
-        readonly ICreateOrderInputPort OutputPort;
+        readonly ICreateOrderOutputPort OutputPort;
+        readonly IEnumerable<IValidator<CreateOrderParams>> Validators;
+
 
         public CreateOrderInteractor(IOrderRepository orderRepository,
             IOrderDetailRepository orderDetailRepository,
             IUnitOfWork unitOfWork,
-            ICreateOrderInputPort outputPort) =>
-            (OrderReposity, OrderDetailRepository, UnitOfWork,OutputPort) =
-            (orderRepository, orderDetailRepository, unitOfWork, outputPort);
+            ICreateOrderOutputPort outputPort,
+            IEnumerable<IValidator<CreateOrderParams>> validators) =>
+            (OrderReposity, OrderDetailRepository, UnitOfWork, OutputPort, Validators) =
+            (orderRepository, orderDetailRepository, unitOfWork, outputPort, validators);
 
         public async Task Handle(CreateOrderParams order)
         {
+          await Validator<CreateOrderParams>.Validate(order, Validators);
+            
             Order Order = new Order
             {
                 CustomerId = order.CustomerId,
