@@ -8,12 +8,12 @@
 
   <ItemGroup>
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.7.1" />
-    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\NorthWind.Presenters\NorthWind.Presenters.csproj" />
     <ProjectReference Include="..\NorthWind.Repositories.EFCore\NorthWind.Repositories.EFCore.csproj" />
     <ProjectReference Include="..\NorthWind.UseCases\NorthWind.UseCases.csproj" />
   </ItemGroup>
